@@ -14,4 +14,17 @@
       }
     }
   });
+  // 请求地址封装管理
+  // 设置请求服务器根路径 用于后续完整 url 的拼接
+  const baseURL ='http://localhost:8080/api/v1';
+  
+  const urls = {
+
+     userinfo: baseURL+'/admin/user/info',
+     usedetail: baseURL+'/admin/user/detail',
+     userlogin: baseURL+'/admin/user/login',
+     useredit: baseURL+'/admin/user/edit',
+  }
+  // 将 urls 对象暴露到全局作用域
+  window.urls = urls;
 })(window);

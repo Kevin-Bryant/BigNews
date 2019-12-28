@@ -120,8 +120,14 @@
         type: "get",
         success: function(backData) {
           console.log(backData);
-        }
+         for(var key in backData.data){
+             $('input.' + key).val(backData.data[key]);
+         }
+         $('img.user_pic').attr('src',backData.data.userPic)
+         }
+        })
+
+                                                                                                                                                                                                                                                                                                                                                                                                                                                 
       });
-    });
   </script>
 </html>
