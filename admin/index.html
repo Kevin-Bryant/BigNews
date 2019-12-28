@@ -53,19 +53,19 @@
         <div class="main" id="main_body">
         </div>
     </div>
-    
+    <script src="./js/ajax.js"></script>
     <script>
         $(function(){
-            const token = localStorage.getItem('token');
-        if(!token){
-            location.href ="./login.html";
-        } 
+        //     const token = localStorage.getItem('token');
+        // if(!token){
+        //     location.href ="./login.html";
+        // } 
         $.ajax({
             type:'get',
             url:'http://localhost:8080/api/v1/admin/user/info',
-            headers:{
-             Authorization:token
-            },
+            // headers:{
+            //  Authorization:token
+            // },
             success:function(response){
             const nickname =  response.data.nickname;
             const userPic =  response.data.userPic;
