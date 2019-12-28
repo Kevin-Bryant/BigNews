@@ -51,13 +51,13 @@
         </div>
         <!-- 右侧主体内容 -->
         <div class="main" id="main_body">
-
         </div>
     </div>
+    
     <script>
         $(function(){
             const token = localStorage.getItem('token');
-        if(token){
+        if(!token){
             location.href ="./login.html";
         } 
         $.ajax({
@@ -70,10 +70,14 @@
             const nickname =  response.data.nickname;
             const userPic =  response.data.userPic;
 
-            $('.user_info img').attr('src',userpic)
-            $('.user_info span').html("登录成功",nickname)
+            $('.user_info img').attr('src',userPic)
+            $('.user_info span').html("欢迎大佬",nickname)
             }
-          });
+          }); 
+        $('.logout').on('click',function(){
+            localStorage.removeItem('token');
+            location.href ='./index.html';
+          })
         })
     </script>
 </body>
